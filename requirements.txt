@@ -36,3 +36,4 @@ pandas
 odfpy
 opencv-python
 opencv-contrib-python
+matplotlib
