@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Character Classifier</title>
+    <title>Precure Classifier</title>
     <link rel="stylesheet" href="./static/stylesheet.css">
 </head>
 <body>
     <header>   
         <img class="header_img" src="https://aidemyexstorage.blob.core.windows.net/aidemycontents/1621500180546399.png" alt="Aidemy">
-        <a class="header-logo" href="#">Character Classifier</a>
+        <a class="header-logo" href="#">Precure Classifier</a>
     </header>
 
     <div class="main">    
-        <h2> AIが送信された画像を識別します</h2>
+        <h2> AIが送信されたプリキュア画像を識別します</h2>
         <p>画像を送信してください</p>
         <form method="POST" enctype="multipart/form-data">
             <input class="file_choose" type="file" name="file">
             <input class="btn" value="submit!" type="submit">
         </form>
-        <div class="answer">{{answer}}</div>
+        <div class="answer"><img src="data:image/png;base64,{{data}}", alt="みんなのプリキュア画像送ってね♥"/></div>
     </div>
