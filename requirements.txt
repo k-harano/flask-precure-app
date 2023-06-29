@@ -35,3 +35,4 @@ Werkzeug==2.0.0
 pandas
 odfpy
 opencv-python
+opencv-contrib-python
