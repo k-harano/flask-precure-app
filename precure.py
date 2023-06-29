@@ -13,7 +13,7 @@ from tensorflow.keras.models import load_model
 precure_list = pd.read_excel("./precure_list.ods")
 input_size_h = 224
 input_size_w = 224
-model = load_model('./model.h5', compile=False)
+model = load_model('./model.h5')
 target_layer_name = "block5_conv3"
 preds_num = 1
 
