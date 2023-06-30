@@ -11,6 +11,7 @@ from werkzeug.utils import secure_filename
 from tensorflow.keras.models import load_model
 
 precure_list = pd.read_excel("./precure_list.ods")
+precure_list["No."] = precure_list["No."].astype(str).str.zfill(2)
 input_size_h = 224
 input_size_w = 224
 model = load_model("./model.h5", compile=False)
@@ -59,10 +60,11 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            file.save(os.path.join(UPLOAD_FOLDER, filename))
             filepath = os.path.join(UPLOAD_FOLDER, filename)
+            file.save(filepath)
 
             img = cv2.imread(filepath)
+            os.remove(filepath)
             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             img2 = cv2.resize(img / 255., (input_size_w, input_size_h))
             x = img2.reshape(1, *img2.shape)
