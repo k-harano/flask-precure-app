@@ -89,7 +89,7 @@ def upload_file():
             plt.imshow(img_c)
             buf = BytesIO()
             fig.savefig(buf, format="png")
-            data = base64.b64encode(buf.getbuffer()).decode("ascii")
+            data = base64.b64encode(buf.getbuffer()).decode("utf-8")
             return render_template('index.html', data=data)
     return render_template("index.html", data="")
 
