@@ -83,7 +83,7 @@ def upload_file():
                 img_c = cv2.hconcat([img_c, img_h])
             
             fig = plt.figure(figsize=(14, 7))
-            plt.text(0, -0.07 * img.shape[0], "入力画像", fontsize="large")
+            plt.text(0, -0.08 * img.shape[0], "入力画像", fontsize="large")
             for i in range(preds_num):
                 plt.text(img.shape[1] * (i + 1), -0.08 * img.shape[0], str(precure_list["No."][preds_idxs[i]]) + "." + precure_list["作品名"][preds_idxs[i]], fontsize="large")
                 plt.text(img.shape[1] * (i + 1), -0.02 * img.shape[0], precure_list["キャラクター名"][preds_idxs[i]] + " ({:.2%})".format(preds[preds_idxs[i]]), fontsize="large")
