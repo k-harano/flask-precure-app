@@ -37,3 +37,4 @@ odfpy
 opencv-python
 opencv-contrib-python
 matplotlib
+japanize-matplotlib

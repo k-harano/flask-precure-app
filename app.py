@@ -4,6 +4,7 @@ import base64
 import numpy as np
 import pandas as pd
 import tensorflow as tf
+import japanize_matplotlib
 import matplotlib.pyplot as plt
 from io import BytesIO
 from flask import Flask, request, redirect, render_template, flash
@@ -84,8 +85,8 @@ def upload_file():
             fig = plt.figure(figsize=(14, 7))
             plt.text(0, -0.07 * img.shape[0], "入力画像", fontsize="large", fontname="MS Gothic")
             for i in range(preds_num):
-                plt.text(img.shape[1] * (i + 1), -0.08 * img.shape[0], str(precure_list["No."][preds_idxs[i]]) + "." + precure_list["作品名"][preds_idxs[i]], fontsize="large", fontname="MS Gothic")
-                plt.text(img.shape[1] * (i + 1), -0.02 * img.shape[0], precure_list["キャラクター名"][preds_idxs[i]] + " ({:.2%})".format(preds[preds_idxs[i]]), fontsize="large", fontname="MS Gothic")
+                plt.text(img.shape[1] * (i + 1), -0.08 * img.shape[0], str(precure_list["No."][preds_idxs[i]]) + "." + precure_list["作品名"][preds_idxs[i]], fontsize="large")
+                plt.text(img.shape[1] * (i + 1), -0.02 * img.shape[0], precure_list["キャラクター名"][preds_idxs[i]] + " ({:.2%})".format(preds[preds_idxs[i]]), fontsize="large")
             plt.imshow(img_c)
             buf = BytesIO()
             fig.savefig(buf, format="png")
